@@ -3,52 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fast Citations : Découvrez des citations inspirantes et motivantes pour illuminer votre journée. Partagez-les sur X, WhatsApp ou copiez-les facilement !">
-  <meta name="keywords" content="citations inspirantes, phrases motivantes, citations quotidiennes, motivation, inspiration, Fast Citations">
+  <meta name="description" content="Fast Citations : Découvrez 100 citations inspirantes d'auteurs célèbres pour illuminer votre journée. Partagez-les sur X, WhatsApp ou copiez-les !">
+  <meta name="keywords" content="citations inspirantes, phrases motivantes, citations d'auteurs célèbres, motivation, inspiration, amour, succès, Fast Citations">
   <meta name="author" content="Fast Citations">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Fast Citations - Citations Inspirantes Quotidiennes">
-  <meta property="og:description" content="Générateur de citations motivantes à partager avec vos amis. Trouvez l'inspiration chaque jour avec Fast Citations !">
+  <meta property="og:title" content="Fast Citations - Citations d'Auteurs Célèbres">
+  <meta property="og:description" content="Explorez des citations motivantes de figures historiques et partagez-les avec vos amis. Inspirez-vous avec Fast Citations !">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://votre-username.github.io/fast-citations/">
   <meta property="og:image" content="https://votre-username.github.io/fast-citations/og-image.jpg">
-  <title> Fast Citations - Citations Inspirantes Quotidiennes</title>
+  <title>🌟 Fast Citations - Citations d'Auteurs Célèbres</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    body {
+      background: linear-gradient(135deg, #e0f2fe 0%, #ede9fe 100%);
     }
-    .fade-in { animation: fadeIn 0.5s ease-out; }
-    .ad-placeholder { background-color: #e5e7eb; text-align: center; color: #6b7280; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .fade-in { animation: fadeIn 0.7s ease-out; }
+    .btn-share {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-share:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .ad-placeholder {
+      background-color: #e5e7eb;
+      text-align: center;
+      color: #6b7280;
+      border-radius: 8px;
+    }
+    .citation-card {
+      border-left: 4px solid #d97706;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .citation-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col">
   <!-- Bannière publicitaire en haut -->
-  <div class="ad-placeholder w-full py-4">
+  <div class="ad-placeholder w-full py-4 mx-auto max-w-7xl">
     <p class="text-sm">[Espace Publicitaire 728x90 - Google AdSense]</p>
   </div>
 
   <!-- Contenu principal -->
   <div class="flex-1 flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-8">
-      <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center"> Fast Citations</h1>
-      <div id="citation" class="text-lg text-gray-700 mb-6 p-4 bg-gray-50 rounded-lg text-center fade-in">
-        Cliquez pour générer une citation inspirante !
+    <div class="glass-card rounded-2xl shadow-xl max-w-3xl w-full p-8 citation-card">
+      <h1 class="text-4xl font-bold text-gray-800 mb-6 text-center font-['Inter']">🌟 Fast Citations</h1>
+      <div id="citation" class="text-xl text-gray-700 mb-6 p-6 bg-white rounded-lg text-center font-['Playfair_Display'] italic fade-in">
+        Cliquez pour découvrir une citation d’un auteur célèbre !
       </div>
-      <button onclick="genererCitation()" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors">Nouvelle Citation</button>
-      <div class="mt-4 flex justify-center space-x-4">
-        <button onclick="partagerTwitter()" class="bg-blue-400 text-white px-4 py-2 rounded-lg hover:bg-blue-500">Partager sur X</button>
-        <button onclick="partagerWhatsApp()" class="bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500">WhatsApp</button>
-        <button onclick="copierCitation()" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500">Copier</button>
+      <button onclick="genererCitation()" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-['Inter']">Nouvelle Citation</button>
+      <div class="mt-6 flex justify-center space-x-4">
+        <button onclick="partagerTwitter()" class="btn-share bg-blue-400 text-white px-4 py-2 rounded-lg hover:bg-blue-500 flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </button>
+        <button onclick="partagerWhatsApp()" class="btn-share bg-green-400 text-white px-4 py-2 rounded-lg hover:bg-green-500 flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.134.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.074-.149-.669-.718-.916-.952-.247-.235-.496-.235-.669-.134-.173.099-1.095.689-1.342 1.086-.247.397-.372.797-.5 1.195-.128.398-.255.881-.255 1.379 0 .498.128 1.148.372 1.745.247.597.594 1.144.991 1.641.397.497 1.094 1.243 2.39 2.039 1.295.796 2.39 1.094 3.286 1.243.896.149 1.692.05 2.24-.347.547-.397 1.193-1.086 1.342-1.484.149-.397.099-.646-.05-.844-.149-.199-.347-.347-.644-.497zM12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/></svg>
+          WhatsApp
+        </button>
+        <button onclick="copierCitation()" class="btn-share bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-500 flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+          Copier
+        </button>
+      </div>
+      <!-- Bannière publicitaire sous les boutons (mobile-friendly) -->
+      <div class="ad-placeholder w-full py-4 mt-6">
+        <p class="text-sm">[Espace Publicitaire 300x250 - Google AdSense]</p>
       </div>
     </div>
   </div>
 
   <!-- Bannière publicitaire en bas -->
-  <div class="ad-placeholder w-full py-4">
+  <div class="ad-placeholder w-full py-4 mx-auto max-w-7xl">
     <p class="text-sm">[Espace Publicitaire 728x90 - Google AdSense]</p>
   </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 text-gray-600 font-['Inter'] text-sm">
+    <p>© 2025 Fast Citations. <a href="/privacy.html" class="text-blue-600 hover:underline">Politique de confidentialité</a></p>
+  </footer>
 
   <!-- Bannières latérales (visible sur desktop) -->
   <div class="hidden lg:block fixed top-20 left-4 w-40 h-96 ad-placeholder">
@@ -60,21 +107,112 @@
 
   <script>
     const citations = [
-      { texte: "Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès. - Albert Schweitzer", auteur: "Albert Schweitzer" },
-      { texte: "La seule façon de faire du bon travail est d'aimer ce que vous faites. - Steve Jobs", auteur: "Steve Jobs" },
-      { texte: "Ne rêvez pas votre vie, vivez vos rêves. - Inconnu", auteur: "Inconnu" },
-      { texte: "Chaque jour est une nouvelle chance de changer votre vie. - Inconnu", auteur: "Inconnu" },
-      { texte: "Les obstacles sont ces choses effrayantes que vous voyez lorsque vous détournez les yeux de votre objectif. - Henry Ford", auteur: "Henry Ford" },
-      { texte: "Crois en toi, et le reste suivra. - Inconnu", auteur: "Inconnu" },
-      { texte: "Le voyage de mille lieues commence par un pas. - Lao Tzu", auteur: "Lao Tzu" },
-      { texte: "Rien n'est impossible à celui qui essaie. - Alexandre le Grand", auteur: "Alexandre le Grand" }
+      { texte: "Le succès n'est pas la clé du bonheur. Le bonheur est la clé du succès.", auteur: "Albert Schweitzer" },
+      { texte: "La seule façon de faire du bon travail est d'aimer ce que vous faites.", auteur: "Steve Jobs" },
+      { texte: "Les obstacles sont ces choses effrayantes que vous voyez lorsque vous détournez les yeux de votre objectif.", auteur: "Henry Ford" },
+      { texte: "Le voyage de mille lieues commence par un pas.", auteur: "Lao Tzu" },
+      { texte: "Rien n'est impossible à celui qui essaie.", auteur: "Alexandre le Grand" },
+      { texte: "La vie est un mystère qu'il faut vivre, et non un problème à résoudre.", auteur: "Mahatma Gandhi" },
+      { texte: "Soyez le changement que vous voulez voir dans le monde.", auteur: "Mahatma Gandhi" },
+      { texte: "L'échec est une opportunité de recommencer plus intelligemment.", auteur: "Henry Ford" },
+      { texte: "Ce qui ne nous tue pas nous rend plus fort.", auteur: "Friedrich Nietzsche" },
+      { texte: "Le meilleur moyen de prédire l'avenir est de le créer.", auteur: "Peter Drucker" },
+      { texte: "La simplicité est la clé de l'élégance.", auteur: "Coco Chanel" },
+      { texte: "Un sourire est une courbe qui redresse tout.", auteur: "Phyllis Diller" },
+      { texte: "La liberté commence là où l'ignorance finit.", auteur: "Victor Hugo" },
+      { texte: "Faites ce que vous pouvez, avec ce que vous avez, là où vous êtes.", auteur: "Theodore Roosevelt" },
+      { texte: "Le courage n'est pas l'absence de peur, mais la capacité de la surmonter.", auteur: "Nelson Mandela" },
+      { texte: "Chaque instant est un nouveau départ.", auteur: "T.S. Eliot" },
+      { texte: "Le bonheur est un parfum que l'on ne peut répandre sur autrui sans en avoir quelques gouttes sur soi.", auteur: "Ralph Waldo Emerson" },
+      { texte: "Rien de grand n'a jamais été accompli sans passion.", auteur: "Georg Wilhelm Friedrich Hegel" },
+      { texte: "Le plus grand risque est de ne prendre aucun risque.", auteur: "Mark Zuckerberg" },
+      { texte: "La patience est amère, mais ses fruits sont doux.", auteur: "Jean-Jacques Rousseau" },
+      { texte: "L'optimisme est la foi qui mène à la réussite.", auteur: "Helen Keller" },
+      { texte: "Le vrai voyage consiste à voir le monde avec de nouveaux yeux.", auteur: "Marcel Proust" },
+      { texte: "Le succès, c'est d'aller d'échec en échec sans perdre son enthousiasme.", auteur: "Winston Churchill" },
+      { texte: "L'amour ne regarde pas avec les yeux, mais avec le cœur.", auteur: "William Shakespeare" },
+      { texte: "La vie est un livre, et ceux qui ne voyagent pas n'en lisent qu'une page.", auteur: "Saint Augustin" },
+      { texte: "La créativité, c'est l'intelligence qui s'amuse.", auteur: "Albert Einstein" },
+      { texte: "La confiance en soi est le premier secret du succès.", auteur: "Ralph Waldo Emerson" },
+      { texte: "La beauté est dans les yeux de celui qui regarde.", auteur: "Oscar Wilde" },
+      { texte: "L'échec est le fondement de la réussite.", auteur: "Lao Tzu" },
+      { texte: "Le silence est parfois la meilleure réponse.", auteur: "Dalaï Lama" },
+      { texte: "Il n'y a pas de chemin vers le bonheur : le bonheur est le chemin.", auteur: "Bouddha" },
+      { texte: "La vie est 10 % ce qui nous arrive et 90 % comment nous y réagissons.", auteur: "Charles R. Swindoll" },
+      { texte: "L'éducation est l'arme la plus puissante pour changer le monde.", auteur: "Nelson Mandela" },
+      { texte: "On ne voit bien qu'avec le cœur, l'essentiel est invisible pour les yeux.", auteur: "Antoine de Saint-Exupéry" },
+      { texte: "Le génie, c'est 1 % d'inspiration et 99 % de transpiration.", auteur: "Thomas Edison" },
+      { texte: "La paix commence par un sourire.", auteur: "Mère Teresa" },
+      { texte: "Ceux qui osent rêver grand réalisent de grandes choses.", auteur: "James Dean" },
+      { texte: "La vérité finit toujours par triompher.", auteur: "Abraham Lincoln" },
+      { texte: "Le bonheur est dans le partage.", auteur: "Platon" },
+      { texte: "La vie est un mystère à vivre, pas un problème à résoudre.", auteur: "Socrate" },
+      { texte: "Le changement est la loi de la vie.", auteur: "John F. Kennedy" },
+      { texte: "Le temps est plus précieux que l'or.", auteur: "Voltaire" },
+      { texte: "L'art de vivre consiste à tirer le meilleur parti de ce que nous avons.", auteur: "Épicure" },
+      { texte: "Le savoir est une arme.", auteur: "Francis Bacon" },
+      { texte: "La persévérance vient à bout de tout.", auteur: "Benjamin Franklin" },
+      { texte: "L'amour est la poésie des sens.", auteur: "Honoré de Balzac" },
+      { texte: "La sagesse est de savoir que l'on ne sait rien.", auteur: "Socrate" },
+      { texteFile: index.html
+      texte: "La meilleure façon d'apprendre est d'enseigner.", auteur: "Aristote" },
+      { texte: "Le monde appartient à ceux qui osent.", auteur: "Charlie Chaplin" },
+      { texte: "La vie est un poème dont l'amour est la rime.", auteur: "Victor Hugo" },
+      { texte: "La curiosité est la première étape vers la connaissance.", auteur: "Platon" },
+      { texte: "Le courage est la première des qualités humaines.", auteur: "Aristote" },
+      { texte: "La liberté n'a pas de prix.", auteur: "Simone de Beauvoir" },
+      { texte: "L'espoir est un rêve éveillé.", auteur: "Aristote" },
+      { texte: "La véritable amitié est une plante qui pousse lentement.", auteur: "George Washington" },
+      { texte: "Le succès est un voyage, pas une destination.", auteur: "Ben Sweetland" },
+      { texte: "La vie est un mystère que l'on doit explorer.", auteur: "Albert Camus" },
+      { texte: "L'amour est un mystère qui ne s'explique pas.", auteur: "Gustave Flaubert" },
+      { texte: "Le bonheur est un art à pratiquer.", auteur: "Épicure" },
+      { texte: "La vérité est un miroir brisé, chacun en tient un morceau.", auteur: "Khalil Gibran" },
+      { texte: "La discipline est la mère du succès.", auteur: "Eschyle" },
+      { texte: "La vie est un défi, affrontez-le.", auteur: "Mère Teresa" },
+      { texte: "L'imagination est plus importante que le savoir.", auteur: "Albert Einstein" },
+      { texte: "La justice est la vérité en action.", auteur: "Joseph Joubert" },
+      { texte: "Le rire est une musique universelle.", auteur: "Victor Hugo" },
+      { texte: "La connaissance de soi est le début de toute sagesse.", auteur: "Socrate" },
+      { texte: "La vie est un jardin, cultivez-le.", auteur: "Voltaire" },
+      { texte: "L'amour est une aventure sans carte.", auteur: "Colette" },
+      { texte: "Le progrès naît de l'audace.", auteur: "Galilée" },
+      { texte: "La patience est la clé de la sérénité.", auteur: "Confucius" },
+      { texte: "La vérité est toujours simple.", auteur: "Isaac Newton" },
+      { texte: "Le bonheur est un état d'esprit.", auteur: "Walt Disney" },
+      { texte: "La vie est une toile, peignez-la avec audace.", auteur: "Vincent van Gogh" },
+      { texte: "L'amour est un feu qui réchauffe l'âme.", auteur: "Rumi" },
+      { texte: "La sagesse est un trésor qui ne s'épuise jamais.", auteur: "Lao Tzu" },
+      { texte: "Le courage est de suivre son cœur.", auteur: "Paulo Coelho" },
+      { texte: "La vie est un écho, ce que vous donnez vous revient.", auteur: "Khalil Gibran" },
+      { texte: "L'humilité est la marque des grands.", auteur: "Confucius" },
+      { texte: "Le succès est la récompense de l'effort.", auteur: "Sophocle" },
+      { texte: "La vie est un jeu, jouez-le avec passion.", auteur: "Jack London" },
+      { texte: "L'amour est un langage universel.", auteur: "Rumi" },
+      { texte: "La connaissance est un voyage sans fin.", auteur: "Albert Einstein" },
+      { texte: "La paix est le fruit de la justice.", auteur: "Martin Luther King Jr." },
+      { texte: "La vie est une danse, trouvez votre rythme.", auteur: "Maya Angelou" },
+      { texte: "L'amour est une étoile qui guide dans la nuit.", auteur: "Khalil Gibran" },
+      { texte: "La sagesse est de savoir quand parler et quand se taire.", auteur: "Confucius" },
+      { texte: "Le courage est de faire ce qui est juste, même seul.", auteur: "Martin Luther King Jr." },
+      { texte: "La vie est un puzzle, chaque pièce compte.", auteur: "Oprah Winfrey" },
+      { texte: "L'amour est un pont entre les cœurs.", auteur: "Rumi" },
+      { texte: "La vérité est la lumière de l'esprit.", auteur: "Platon" },
+      { texte: "La vie est une aventure, vivez-la pleinement.", auteur: "Helen Keller" },
+      { texte: "L'amour est la clé qui ouvre toutes les portes.", auteur: "Paulo Coelho" },
+      { texte: "La sagesse est de voir la beauté dans l'ordinaire.", auteur: "Ralph Waldo Emerson" },
+      { texte: "Le courage est de se relever après une chute.", auteur: "Nelson Mandela" },
+      { texte: "La vie est un miroir, souriez-lui.", auteur: "Maya Angelou" },
+      { texte: "L'amour est un trésor qui ne s'achète pas.", auteur: "Antoine de Saint-Exupéry" },
+      { texte: "La vérité est la fondation de la confiance.", auteur: "Confucius" },
+      { texte: "La vie est une chanson, chantez-la avec cœur.", auteur: "Rabindranath Tagore" }
     ];
 
     function genererCitation() {
       const citationDiv = document.getElementById('citation');
       const randomIndex = Math.floor(Math.random() * citations.length);
       const citation = citations[randomIndex];
-      citationDiv.innerHTML = `"${citation.texte}"<br><span class="text-sm text-gray-500">— ${citation.auteur}</span>`;
+      citationDiv.innerHTML = `"${citation.texte}"<br><span class="text-base text-gray-500">— ${citation.auteur}</span>`;
       citationDiv.classList.remove('fade-in');
       void citationDiv.offsetWidth;
       citationDiv.classList.add('fade-in');
@@ -100,7 +238,4 @@
     }
   </script>
 </body>
-  <footer>
-    <a href="/privacy.html">Confidentialité</a>
-  </footer>
 </html>
